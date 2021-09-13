@@ -1,0 +1,46 @@
+---
+title: "Factors of Political Participation of Youth"
+author: "Roman Yaniv"
+date: "8/12/2021"
+output: html_document
+---
+
+  In most of the European countries throughout the last decade we observe a tendency that youth is likely to be the most passive age group on the national elections. Nevertheless, we see a lot of examples when youth is active in other kinds of political participation. Therefore, the question why younger people are likely to ignore elections is open.
+  There are concerns that the low turnout of youth may cause a bias in the governmental institutions, so that the rights and interests of youth may not be fully represented. Also, engaging more people to political participation is important from the perspective of building a civil democratic society.
+  Therefore, the purpose of this article is to discover the main factors that may have an impact on the decision to vote on elections. Such as youth is often the most passive on elections, the focus will be made on this age category.
+
+
+### Data = [World Values Survey Wave 6 (2010-2014)](https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp)
+### Variables:
+
+Dependent:
+- v226 - Vote in elections: Local level (1-Always; 3-Never);
+- v227 - Vote in elections: National level (1-Always; 3-Never);
+
+# Hypothesis:
+
+
+
+# Loading the packages
+```{r, cache= TRUE, results='hide', message=FALSE, warning=FALSE}
+library(foreign)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(viridis)
+```
+
+### Loading the data
+```{r, cache= TRUE, message=FALSE, warning=FALSE}
+load("/Users/admin/Desktop/Стажування Брік/Datasets/WV6_Data_R_v20201117.rdata")
+WVS6 <- WV6_Data_R_v20201117
+```
+### Checking the WVS6 data
+```{r, cache= TRUE, results='hide'}
+View(WVS6)
+names(WVS6)
+```
+
+
+
+
