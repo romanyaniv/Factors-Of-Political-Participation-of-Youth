@@ -10,9 +10,10 @@ output: html_document
   Therefore, the purpose of this article is to discover the main factors that may have an impact on the decision to vote on elections. Such as youth is often the most passive on elections, the focus will be made on this age category.
 
 
-### Data = [World Values Survey Wave 6 (2010-2014)](https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp)
-### Variables:
+### Data
+[World Values Survey Wave 6 (2010-2014)](https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp)
 
+### Variables:
 Dependent:
 - v226 - Vote in elections: Local level (1-Always; 3-Never);
 - v227 - Vote in elections: National level (1-Always; 3-Never);
