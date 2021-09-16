@@ -10,19 +10,130 @@ output: html_document
   Therefore, the purpose of this article is to discover the main factors that may have an impact on the decision to vote on elections. Such as youth is often the most passive on elections, the focus will be made on this age category.
 
 
-### Data
-[World Values Survey Wave 6 (2010-2014)](https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp)
+## Data
+[World Values Survey Wave 7 (2017-2021)](https://www.worldvaluessurvey.org/WVSDocumentationWV7.jsp)
 
-### Variables:
-Dependent:
-- v226 - Vote in elections: Local level (1-Always; 3-Never);
-- v227 - Vote in elections: National level (1-Always; 3-Never);
+## Variables:
 
-# Hypothesis:
+### Dependent:
+
+Likelihood of voting
+
+- v221 - Vote in elections: Local level (1-Always; 3-Never);
+
+- v222 - Vote in elections: National level (1-Always; 3-Never);
+
+### Factors:
+
+Confidence to political institutions
+
+- v69 - How much confidence do you have to: The Police (1-a lot; 4-None)
+
+- v70 - How much confidence do you have to: The Courts (1-a lot; 4-None)
+
+- v71 - How much confidence do you have to: The Government (1-a lot; 4-None)
+
+- v72 - How much confidence do you have to: The Political Parties (1-a lot; 4-None)
+
+- v73 - How much confidence do you have to: The Parliament (1-a lot; 4-None)
+
+- v76 - How much confidence do you have to: Elections (1-a lot; 4-None)
+
+Sources of information about politics
+
+- v201 - How often do you get political information from: Daily Newspapers (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v202 - How often do you get political information from: TV News (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v203 - How often do you get political information from: Radio (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v204 - How often do you get political information from: Mobile (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v205 - How often do you get political information from: Email (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v206 - How often do you get political information from: Internet (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v207 - How often do you get political information from: Social Media (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+- v208 - How often do you get political information from: Friends (1-Daily;2-Weekly;3-Month;4-<Month;5-Never)
+
+Political Participation
+
+- v209 - Signing a petition (1-Have done; 2-Might do; 3- Would never do)
+
+- v210 - Joining in boycotts (1-Have done; 2-Might do; 3- Would never do)
+
+- v211 - Attending peacful demonstration (1-Have done; 2-Might do; 3- Would never do)
+
+- v212 - Joining strikes (1-Have done; 2-Might do; 3- Would never do)
+
+- v214 - Contacting a governmental official (1-Have done; 2-Might do; 3- Would never do)
+
+- v215 - Encourage others to take actions about pol. issues (1-Have done; 2-Might do; 3- Would never do)
+
+- v216 - Encourage others to vote (1-Have done; 2-Might do; 3- Would never do)
+
+- v217 - Searching information about politics (1-Have done; 2-Might do; 3- Would never do)
+
+- v218 - Signing an e-petition (1-Have done; 2-Might do; 3- Would never do)
+
+- v219 - Encourage others to take actions about pol. issues (E) (1-Have done; 2-Might do; 3- Would never do)
+
+- v220 - Organizing political activities (1-Have done; 2-Might do; 3- Would never do)
+
+Trust to election process
+
+- 224 - How often occurs: Votes are counted fairly (1-Often; 4-Not at all)
+
+- 225 - How often occurs: Opposition candidates are prevented from running (1-Often; 4-Not at all)  !!!
+
+- 227 - How often occurs: Voters are bribed (1-Often; 4-Not at all) !!!
+
+- 229 - How often occurs: Election officials are fair (1-Often; 4-Not at all)
+
+- 230 - How often occurs: Rich people buy elections (1-Often; 4-Not at all) !!!
+
+- 231 - How often occurs: Voters are threatened at the pools (1-Often; 4-Not at all) !!!
+
+Democracy in the country
+
+- v238 - Having a democratic political system is: (1-Good; 4-Bad)
+
+- v250 - How important it is to live in a democratically governed country (1-Not at all; 10-Important) !!!
+
+- v251 - How democratically is the country being governed (1-Not dem.; 10-Dem) !!!
+
+
+Others:
+
+- v4 - How important is politics in your life (1-Important; 4-Not important)
+
+- v199 - How interested are you in politics (1-Very; 4-Not at all)
+
+- v234 - How important is having a fair elections to you (1-Important; 4-Not important)
+
+- v235 - Having a strong leader who does not bother with parliament is:(1-Good; 4-Bad)
+
+- v252 - How satisfied are you with the functioning of pol.system in your country (1-Not satisfied; 10-Satisfied)
+
+### Demographics
+
+- v260 - Sex (1-Male; 2-Female)
+
+- v262 - Age
+
+- v263 - Country
+
+- v271 - Do you live with parents (1-No; 2,3,4 - Yes)
+
+- v287 - What class to you belong to (1-Upper; 2-Up.Middle; 3-low.Middle; 4-Working; 5-Lower)
+
+
+## Hypothesis:
 
 
 
-# Loading the packages
+### Loading the packages
 ```{r, cache= TRUE, results='hide', message=FALSE, warning=FALSE}
 library(foreign)
 library(dplyr)
@@ -33,13 +144,12 @@ library(viridis)
 
 ### Loading the data
 ```{r, cache= TRUE, message=FALSE, warning=FALSE}
-load("/Users/admin/Desktop/Стажування Брік/Datasets/WV6_Data_R_v20201117.rdata")
-WVS6 <- WV6_Data_R_v20201117
+load("/Users/admin/Desktop/Стажування Брік/Datasets/WVS7_R_v2_0.rdata")
 ```
 ### Checking the WVS6 data
 ```{r, cache= TRUE, results='hide'}
-View(WVS6)
-names(WVS6)
+View(`WVS_Cross-National_Wave_7_v2_0`)
+names(`WVS_Cross-National_Wave_7_v2_0`)
 ```
 
 
